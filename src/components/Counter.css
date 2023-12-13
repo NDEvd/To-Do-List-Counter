@@ -1,0 +1,29 @@
+.counter {
+  width: 70vw;
+  background-color: rgb(253, 253, 253);
+  padding: 40px;
+  margin: 10px;
+  border-radius: 15px;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 400;
+  color:#30cfd0;
+}
+
+.counter__button {
+  min-width: 90px;
+  margin: 10px;
+  background-color: #fed6e3;
+  color: white;
+  font-size: 40px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.counter__button:hover {
+  border: 2px solid #b490ca;
+}
