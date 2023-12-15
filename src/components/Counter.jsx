@@ -1,6 +1,4 @@
-import React from "react";
 import { observer } from "mobx-react-lite"
-// import './App.css';
 import './Counter.css';
 import counter from "../store/counter"
 

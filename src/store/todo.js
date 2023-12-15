@@ -10,23 +10,19 @@ class Todo {
     }
 
     addTodo(todo) {
-
-      this.todos.push({title: todo, completed: false});
+      const newId = new Date();
+      this.todos.push({id: newId, title: todo, completed: false});
       console.log(this.todos);
-      console.log(todo._id);
     }
     removeTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id)
     }
 
     completeTodo(id) {
-      this.todos = this.todos.map(todo => todo.id !== id ? {...todo, completed: !todo.completed} : todo)
+      this.todos = this.todos.map((todo) => ({
+        ...todo, completed: todo.id === id ? !todo.completed : todo.completed
+      }));
     }
-
-    // changeTodos() {
-      
-    // }
-
 }
 
 export default new Todo()

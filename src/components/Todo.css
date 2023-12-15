@@ -4,7 +4,6 @@
   padding: 40px;
   margin: 10px;
   border-radius: 15px;
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 25px;
   line-height: 1.5;
@@ -49,6 +48,11 @@
   margin-right: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.todo__label-check {
+  max-width: 80%;
 }
 
 .todo__checkbox {
@@ -59,15 +63,18 @@
 
 .todo__checkbox:checked {
   &+.todo__label::before {
-    /* content: "url(../image/check.svg)"; */
+    content: url(../image/check.svg);
     background-color: #b490ca;
     border: 2px solid #b490ca;
-    color: white;
   }
 }
 
 .todo__label {
   font-size: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /* max-width: 80%; */
   cursor: pointer;
   display: flex;
   &:hover {
@@ -77,7 +84,9 @@
   }
 }
 
+
 .todo__label::before {
+  box-sizing: border-box;
   content: '';
   border: 2px solid white;
   width: 30px;
@@ -91,10 +100,17 @@
   margin: 0;
   width: 30px;
   height: 30px;
-  border: 1px solid #FFFFFF;
-  background-color: transparent;
+  border: none;
+  background-color: #764ba2;
+  background-image: url(../image/delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
-  box-sizing: border-box;
   opacity: 1;
+  transition: opacity .3s linear;
+}
+
+.todo__remove:hover {
+  opacity: 0.6;
   transition: opacity .3s linear;
 }
